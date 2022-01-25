@@ -159,6 +159,7 @@ public class Menu {
                             carDao.deleteCar(car);
                         }
                         companyDao.deleteCompany(company);
+                        System.out.println("\nYou delete: " + company.getNAME());
                         run = false;
                         break;
                     }
@@ -192,6 +193,7 @@ public class Menu {
                 for(Car car : cars) {
                     if(Integer.valueOf(choice).equals(index)){
                         carDao.deleteCar(car);
+                        System.out.println("\nYou delete: " + car.getNAME());
                         run = false;
                         break;
                     }
@@ -231,10 +233,11 @@ public class Menu {
                                     customerDao.returnCar(customer);
                                     carDao.updateIsRateStatus(car, 2); // Rent = false (2)
                                     car.setRent(false);
-                                    customerDao.deleteCustomer(customer);
                                 }
                             }
                         }
+                        customerDao.deleteCustomer(customer);
+                        System.out.println("\nYou delete: " + customer.getNAME());
                         run = false;
                         break;
                     }
